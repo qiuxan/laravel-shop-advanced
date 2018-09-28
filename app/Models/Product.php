@@ -24,5 +24,12 @@ class Product extends Model
             return $this->attributes['image'];
         }
         return \Storage::disk('public')->url($this->attributes['image']);
+
+
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
